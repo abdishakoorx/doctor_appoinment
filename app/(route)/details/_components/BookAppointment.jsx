@@ -75,7 +75,7 @@ function BookAppointment({doctor}) {
     <div>
     <Dialog>
         <DialogTrigger><Button className='mt-3 rounded-full hover:bg-secondary'>Book Appointment</Button></DialogTrigger>
-        <DialogContent className="max-w-[60vw] max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-[90vw] max-h-[90vh] overflow-y-auto">
             <DialogHeader>
                 <DialogTitle>Appointment info</DialogTitle>
                 <DialogDescription>
