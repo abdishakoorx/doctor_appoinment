@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { LoginLink } from '@kinde-oss/kinde-auth-nextjs'
 import Image from 'next/image'
 import React from 'react'
 
@@ -23,8 +24,8 @@ function Hero() {
             <p className="mt-4 text-gray-600">
             Discover a seamless way to find and book appointments with top-rated doctors. Our platform connects you with experienced healthcare professionals across various specialties, ensuring you receive the best care possible. Experience the convenience of online booking and take the first step towards better health today.
             </p>
-
-            <Button className='mt-10 hover:bg-secondary'>Explore now</Button>
+            
+            <LoginLink><Button className='mt-10 hover:bg-secondary'>Explore now</Button></LoginLink>
         </div>
         </div>
     </div>

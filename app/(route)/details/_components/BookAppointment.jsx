@@ -75,54 +75,54 @@ function BookAppointment({doctor}) {
     <div>
     <Dialog>
         <DialogTrigger><Button className='mt-3 rounded-full hover:bg-secondary'>Book Appointment</Button></DialogTrigger>
-        <DialogContent>
+        <DialogContent className="max-w-[60vw] max-h-[90vh] overflow-y-auto">
             <DialogHeader>
-            <DialogTitle>Appointment info</DialogTitle>
-            <DialogDescription>
+                <DialogTitle>Appointment info</DialogTitle>
+                <DialogDescription>
                 <div>
-                    <div className='grid mt-5 sm:grid-cols-1 md:grid-cols-2'>
-                        {/* calendar */}
-                        <div className='flex flex-col items-baseline gap-3'>
-                            <h2 className='flex items-center gap-2'>
-                                <CalendarDays className='w-5 h-5 text-secondary'/>
-                                Select Date
+                    <div className='grid gap-4 mt-5 sm:grid-cols-1 md:grid-cols-2'>
+                    {/* calendar */}
+                    <div className='flex flex-col items-baseline gap-3'>
+                        <h2 className='flex items-center gap-2 text-sm'>
+                        <CalendarDays className='w-4 h-4 text-secondary'/>
+                        Select Date
+                        </h2>
+                        <Calendar
+                        mode="single"
+                        selected={date}
+                        onSelect={setDate}
+                        disabled={pastDay}
+                        className="border rounded-md w-full max-w-[300px]"
+                        />
+                    </div>
+                    {/* time */}
+                    <div>
+                        <h2 className='flex items-center gap-2 text-sm'>
+                        <Clock className='w-4 h-4 text-secondary'/>
+                        Select Time Slot
+                        </h2>
+                        <div className='grid grid-cols-3 gap-2 p-2 mt-3 border rounded-lg sm:grid-cols-4 md:grid-cols-3'>
+                        {timeSlot?.map((item, index) => (
+                            <h2 onClick={() => setSelectedTimeSlot(item.time)}
+                            key={index} className={`p-1 text-center text-sm border cursor-pointer rounded-xl hover:text-white hover:bg-primary ${item.time==selectedTimeSlot&&'bg-primary text-white'}`}>
+                            {item.time}
                             </h2>
-                            <Calendar
-                                mode="single"
-                                selected={date}
-                                onSelect={setDate}
-                                disabled={pastDay}
-                                className="border rounded-md"
-                            />
-                        </div>
-                        {/* time */}
-                        <div>
-                            <h2 className='flex items-center gap-2'>
-                                <Clock className='w-5 h-5 text-secondary'/>
-                                Select Time Slot
-                            </h2>
-                            <div className='grid grid-cols-2 gap-3 p-5 mt-3 border rounded-lg md:grid-cols-3'>
-                                {timeSlot?.map((item, index) => (
-                                    <h2 onClick={() => setSelectedTimeSlot(item.time)}
-                                    key={index} className={`p-2 text-center border cursor-pointer rounded-2xl hover:text-white hover:bg-primary ${item.time==selectedTimeSlot&&'bg-primary text-white'}`}>{item.time}</h2>
-                                ))}
-                            </div>
+                        ))}
                         </div>
                     </div>
+                    </div>
                 </div>
-            </DialogDescription>
-            <div>
-                <textarea placeholder='Note...' className='w-full mt-2 border-2 rounded-md border-primary' 
-                value={note} onChange={(e) => setNote(e.target.value)}></textarea>
-            </div>
+                </DialogDescription>
+                <div>
+                <textarea placeholder='Note...' className='w-full h-20 mt-2 border-2 rounded-md border-primary' 
+                    value={note} onChange={(e) => setNote(e.target.value)}></textarea>
+                </div>
             </DialogHeader>
-            <DialogFooter className="gap-2 sm:justify-end">
-                <DialogFooter className="gap-2 sm:justify-end">
-                    <DialogClose asChild>
-                        <Button type="button" variant="destructive">Close</Button>
-                    </DialogClose>
-                    <Button type="button" disabled={!(date && selectedTimeSlot)} onClick={()=>bookAppointment()}>Submit</Button>
-                </DialogFooter>
+            <DialogFooter className="gap-2 mt-4 sm:justify-end">
+                <DialogClose asChild>
+                <Button type="button" variant="destructive">Close</Button>
+                </DialogClose>
+                <Button type="button" disabled={!(date && selectedTimeSlot)} onClick={()=>bookAppointment()}>Submit</Button>
             </DialogFooter>
         </DialogContent>
     </Dialog>    
