@@ -10,6 +10,7 @@ https://doctorwhere.vercel.app/
 4. Shadcn-UI - https://ui.shadcn.com/
 5. Hygraph CMS - https://hygraph.com/
 6. Kinde AUTH - https://kinde.com/
+7. NodeJs - https://nodejs.org/
 
 
 Deployed on Vercel
