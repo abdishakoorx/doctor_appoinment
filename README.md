@@ -2,8 +2,6 @@
 
 **Comprehensive Doctor Appointment Management System**
 
-[Live Demo](https://doctorwhere.vercel.app/)
-
 ## Overview
 
 DoctorWhere bridges the gap between patients and healthcare providers with a streamlined appointment booking system. Featuring real-time availability, doctor profiles, and seamless appointment management for modern healthcare needs.
@@ -26,9 +24,6 @@ DoctorWhere bridges the gap between patients and healthcare providers with a str
 - **Content Management:** Hygraph CMS
 - **Deployment:** Vercel
 
-## 🚀 Live Demo
-
-Book your next appointment: [doctorwhere.vercel.app](https://doctorwhere.vercel.app/)
 
 ## 🎯 What This Project Demonstrates
 
